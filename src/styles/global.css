@@ -1,0 +1,61 @@
+:root {
+  --bg-color: #edece8;       
+  --text-color: #333333;     
+  --accent-color: #b33939;   
+  --link-color: #666666;     
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-mono: "Fira Code", "Consolas", monospace; /* 适合代码或日期的等宽字体 */
+  --font-size-xs: 12px;   /* 12px */
+  --font-size-sm: 14px;  /* 14px */
+  --font-size-base: 16px;    /* 16px (默认) */
+  --font-size-lg: 20px;   /* 20px */
+  --font-size-xl: 24px;    /* 24px */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif); 
+  line-height: 1.8;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: #cccccc;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration-color: var(--accent-color);
+}
+
+
+
+.container {
+  max-width: 650px;
+  margin: 0px auto;
+  padding: 60px 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
