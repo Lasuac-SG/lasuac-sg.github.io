@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
 const allPosts = await getCollection('blog');
 
-allPosts.sort( (a,b) => Date.parse(b.data.date) - Date.parse(a.data.date) );
+allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 ---
 
@@ -16,7 +16,7 @@ allPosts.sort( (a,b) => Date.parse(b.data.date) - Date.parse(a.data.date) );
         {allPosts.map((post) => (
             <li style="display: flex; gap: 30px; margin-bottom: 15px;">
                 <span style="color: #888; font-family: var(--font-mono); white-space: nowrap;">
-                    {post.data.date}
+                    {post.data.date.toISOString().split('T')[0]}
                 </span>
 
                 <a href={`/blog/${post.id}`} style="text-decoration: none;">
