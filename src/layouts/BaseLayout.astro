@@ -1,0 +1,21 @@
+---
+// 这里可以接收外部页面传进来的参数，比如网页标题
+const { pageTitle } = Astro.props;
+---
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title> <!-- 使用传入的标题变量 -->
+  </head>
+  <body>
+    <!-- 公共导航栏 -->
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/link">Link</a>
+    </nav>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
