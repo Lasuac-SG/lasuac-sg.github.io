@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  
+  return blogEntries.map(entry => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await render(entry);
+---
+
+<BaseLayout pageTitle={entry.data.title}>
+  <header style="margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+    <h1 style="margin-bottom: 10px;">{entry.data.title}</h1>
+    <span style="color: #888; font-family: var(--font-mono);">发布于 {entry.data.date}</span>
+  </header>
+
+  <article class="markdown-body">
+    <Content />
+  </article>
+</BaseLayout>

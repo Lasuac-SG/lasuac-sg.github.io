@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+const allPosts = await getCollection('blog');
+
+allPosts.sort( (a,b) => Date.parse(b.data.date) - Date.parse(a.data.date) );
+
+---
+
+<BaseLayout pageTitle="Blog">
+
+
+    <h1>Blog</h1>
+        
+    <ul style="list-style-type: none; padding-left: 0;">
+        {allPosts.map((post) => (
+            <li style="display: flex; gap: 30px; margin-bottom: 15px;">
+                <span style="color: #888; font-family: var(--font-mono); white-space: nowrap;">
+                    {post.data.date}
+                </span>
+
+                <a href={`/blog/${post.id}`} style="text-decoration: none;">
+                    {post.data.title}
+                </a>
+            </li>
+        ))}
+    </ul>
+
+</BaseLayout>
