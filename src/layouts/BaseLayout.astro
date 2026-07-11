@@ -31,6 +31,21 @@ const { pageTitle, description, image } = Astro.props;
     </body>
 
 
+    <!-- ==================== Umami 统计代码 ==================== -->
+    <script is:inline>
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const isOwner = localStorage.getItem('ignore_analytics') === 'true';
+      if (!isLocal && !isOwner) {
+        const script = document.createElement('script');
+        script.defer = true;
+        script.src = 'https://cloud.umami.is/script.js';
+        script.setAttribute('data-website-id', 'b2490c6f-ff99-459a-9657-a3b886914748');
+        document.head.appendChild(script);
+      } else {
+        console.log('【Umami】开发环境或管理员访问，统计已静默拦截。');
+      }
+    </script>
+
 
 
 
