@@ -1,12 +1,18 @@
 ---
-const { pageTitle } = Astro.props;
 import "../styles/global.css";
-import Footer from '../components/Footer.astro'
+import Footer from '../components/Footer.astro';
+import BaseHead from '../components/BaseHead.astro';
+
+interface Props {
+  pageTitle: string;
+  description?: string;
+  image?: string;
+}
+const { pageTitle, description, image } = Astro.props;
 ---
 <html lang="zh-CN">
     <head>
-        <meta charset="utf-8" />
-        <title>{pageTitle}</title> 
+        <BaseHead title={pageTitle} description={description} image={image} />
     </head>
 
     <body style="display: flex; flex-direction: column; min-height: 100vh; margin:0;">
