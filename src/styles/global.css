@@ -59,3 +59,54 @@ nav {
 .text-base { font-size: var(--font-size-base); }
 .text-lg { font-size: var(--font-size-lg); }
 .text-xl { font-size: var(--font-size-xl); }
+
+
+/* 针对文章正文中的引用块设置样式 */
+.markdown-body blockquote {
+  /* 核心：左侧的彩色竖线，4px 宽度，实线，蓝色 */
+  border-left: 2px solid #3498db; 
+  
+  /* 内部留白：上下 10px，左右 15px，防止文字紧贴着竖线 */
+  padding: 10px 15px;             
+  
+  /* 外部边距：让引用块与前后的正文保持呼吸感 */
+  margin: 1.5rem 0;               
+  
+  /*
+   可选：给引用块加一个极浅的灰色背景，增强区块感 
+  background-color: #C0C0C0;      
+  */
+  /* 字体颜色稍微调灰，与正常正文（黑色）区分开 */
+  color: #555;                    
+}
+
+
+.markdown-body {
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  color: #333;
+}
+/* 如果引用块内有段落，消除其默认的底部边距，防止排版松散 */
+.markdown-body blockquote p {
+  margin: 0;
+}
+
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: var(--font-mono);
+}
+
+.markdown-body code {
+  background-color: #f3f4f6; /* 极浅的灰色背景 */
+  padding: 0.2em 0.4em;      /* 左右增加一点内边距 */
+  border-radius: 4px;        /* 轻微的圆角 */
+  font-size: 0.9em;          /* 代码字体通常比汉字略大，稍微缩小一点以对齐视觉基线 */
+  color: #d63384;            /* 可选：给行内代码加一个暗粉色/极客红，和普通黑字区分 */
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
