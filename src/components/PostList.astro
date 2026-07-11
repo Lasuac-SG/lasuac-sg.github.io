@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul style="list-style-type: none; padding-left: 0;">
+  {posts.map((post) => (
+    <li style="display: flex; gap: 30px; margin-bottom: 15px;">
+      <span style="color: #888; font-family: var(--font-mono); white-space: nowrap;">
+        {post.data.date.toISOString().split('T')[0]}
+      </span>
+      
+      <a href={`/blog/${post.id}`} style="text-decoration: none;">
+        {post.data.title}
+      </a>
+    </li>
+  ))}
+</ul>
