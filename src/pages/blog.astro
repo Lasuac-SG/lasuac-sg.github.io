@@ -19,7 +19,7 @@ allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
                     {post.data.date.toISOString().split('T')[0]}
                 </span>
 
-                <a href={`/blog/${post.id}`} style="text-decoration: none;">
+                <a href={`/blog/${post.id}`} style="text-decoration: none; font-family:var(--font-mono);">
                     {post.data.title}
                 </a>
             </li>
