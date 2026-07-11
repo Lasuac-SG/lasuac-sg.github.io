@@ -39,9 +39,11 @@ a:hover {
 
 
 .container {
-  max-width: 650px;
+  max-width: 800px;
   margin: 0px auto;
+  width: 100%;
   padding: 60px 20px;
+  box-sizing: border-box;
 }
 
 .text-center {

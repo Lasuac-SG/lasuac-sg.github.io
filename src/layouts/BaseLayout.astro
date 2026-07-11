@@ -1,23 +1,31 @@
 ---
-// 这里可以接收外部页面传进来的参数，比如网页标题
 const { pageTitle } = Astro.props;
 import "../styles/global.css";
+import Footer from '../components/Footer.astro'
 ---
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <title>{pageTitle}</title> <!-- 使用传入的标题变量 -->
-  </head>
-  <body>
-    <div class="container">
-        <!-- 公共导航栏 -->
-        <nav>
-            <a href="/">Home</a>
-            <a href="/blog">Blog</a>
-        </nav>
-        <main>
-            <slot />
-        </main>
-    </div>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <title>{pageTitle}</title> 
+    </head>
+
+    <body style="display: flex; flex-direction: column; min-height: 100vh; margin:0;">
+        <div class="container" style="flex:1;">
+            <nav>
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+            </nav>
+            <main>
+                <slot />
+            </main>
+        </div>
+
+        <Footer />
+
+    </body>
+
+
+
+
+
 </html>
