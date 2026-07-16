@@ -11,14 +11,10 @@
             "id": "f33dca2b6bfa8a26",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "moments/评论系统引入！.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "评论系统引入！"
+              "title": "新标签页"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "moments/评论系统引入！.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "评论系统引入！ 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "moments/评论系统引入！.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "评论系统引入！ 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "moments/评论系统引入！.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "评论系统引入！ 的大纲"
+              "title": "大纲"
             }
           }
         ]
@@ -185,9 +178,10 @@
   },
   "active": "f33dca2b6bfa8a26",
   "lastOpenFiles": [
-    "moments/关于RSS.md~",
-    "moments/关于RSS.md",
     "moments/随笔.md",
-    "moments/评论系统引入！.md"
+    "moments/评论系统引入！.md",
+    "moments/关于RSS.md",
+    "moments",
+    "moments/关于RSS.md~"
   ]
 }
