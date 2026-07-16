@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allMoments = await getCollection('moments');
+allMoments.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout pageTitle="随笔与动态">
+    <h1>碎片记录</h1>
+    
+    <div class="moments-feed">
+        {allMoments.map((moment) => (
+            <div class="moment-card" style="margin-bottom: 2rem; padding: 1rem; background: #f9f9f9; border-radius: 8px;">
+                <time style="font-size: 0.85rem; color: #666;">
+                    {moment.data.date.toLocaleDateString('zh-CN')}
+                </time>
+                <div class="moment-content" style="margin-top: 0.5rem;">
+                    {moment.body}
+                </div>
+            </div>
+        ))}
+    </div>
+</BaseLayout>
