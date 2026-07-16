@@ -2,13 +2,15 @@
 import "../styles/global.css";
 import Footer from '../components/Footer.astro';
 import BaseHead from '../components/BaseHead.astro';
+import Giscus from '../components/Giscus.astro';
 
 interface Props {
   pageTitle: string;
   description?: string;
   image?: string;
+  showComments?: boolean;
 }
-const { pageTitle, description, image } = Astro.props;
+const { pageTitle, description, image, showComments = false } = Astro.props;
 ---
 <html lang="zh-CN">
     <head>
@@ -20,9 +22,11 @@ const { pageTitle, description, image } = Astro.props;
             <nav>
                 <a href="/">Home</a>
                 <a href="/blog">Blog</a>
+                <a href="/guestbook">留言板</a>
             </nav>
             <main>
                 <slot />
+                {showComments && <Giscus />}
             </main>
         </div>
 
