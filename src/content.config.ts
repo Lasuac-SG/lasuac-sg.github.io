@@ -13,6 +13,14 @@ const blogCollection = defineCollection({
   })
 });
 
+const momentsCollection = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/moments"}),
+    schema: z.object({
+        date: z.coerce.date(),
+    })
+})
+
 export const collections = {
   'blog': blogCollection,
+  'moments': momentsCollection,
 };
